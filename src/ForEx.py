@@ -1,6 +1,6 @@
 import sys
 
-from os import startfile as run   # lubuntu issue: cannot import module
+from os import startfile as run  # lubuntu issue: cannot import module
 from os.path import isfile
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QComboBox, QPushButton, QWidget, QGridLayout, QLineEdit, \
@@ -11,6 +11,7 @@ from PyQt5.QtCore import Qt
 try:
     # Include in try/except block if you're also targeting Mac/Linux
     from PyQt5.QtWinExtras import QtWin
+
     app_id = 'marbl.forex.forex.0.0.3'
     QtWin.setCurrentProcessExplicitAppUserModelID(app_id)
 except ImportError:
@@ -369,7 +370,7 @@ class CommandParser(str):
         self.tmp.clear()
         self.tmp_del.clear()
 
-        if not(not self.cmd):
+        if not (not self.cmd):
             if 'update' in self.cmd:
                 if isfile('updateData.exe'):
                     run("updateData.exe")
@@ -383,7 +384,7 @@ class CommandParser(str):
             if 'help' in self.cmd:
                 self.cmd.remove('help')
 
-        if not(not self.cmd):
+        if not (not self.cmd):
             for item in self.cmd:
                 print('Command not found:', item)
 
