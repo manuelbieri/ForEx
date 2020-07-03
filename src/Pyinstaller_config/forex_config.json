@@ -1,0 +1,89 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "C:/Users/41799/PycharmProjects/ForeignExchange/ForEx.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": false
+  },
+  {
+   "optionDest": "console",
+   "value": false
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "C:/Users/41799/PycharmProjects/ForeignExchange/Icon/favicon.ico"
+  },
+  {
+   "optionDest": "name",
+   "value": "ForEx"
+  },
+  {
+   "optionDest": "ascii",
+   "value": false
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "win_private_assemblies",
+   "value": false
+  },
+  {
+   "optionDest": "win_no_prefer_redirects",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "excludes",
+   "value": "tkinter"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "pkg_resources.py2_warn"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/41799/PycharmProjects/ForeignExchange/database;database/"
+  },
+  {
+   "optionDest": "binaries",
+   "value": "C:/Users/41799/PycharmProjects/ForeignExchange/update_exe/updateData.exe;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/41799/PycharmProjects/ForeignExchange/Icon/favicon.ico;Icon/."
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}
