@@ -374,8 +374,8 @@ class CommandParser(str):
                 if isfile('updateData.exe'):
                     run("updateData.exe")
                 elif isfile('updateData.py'):
+                    print('no executable updater available, runs with python ')
                     exec(open("updateData.py").read())
-                    print('no executable updater available')
                 else:
                     print("no updater available")
                 self.cmd.remove('update')
