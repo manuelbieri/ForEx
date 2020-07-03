@@ -8,3 +8,7 @@
 .idea/workspace.xml
 *.pyc
 *.png
+docs/.idea/vcs.xml
+docs/.idea/modules.xml
+docs/.idea/docs.iml
+docs/.idea/misc.xml
