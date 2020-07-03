@@ -6,8 +6,9 @@ function head(icon) {
         '    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
         '    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n' +
         '    <meta name="author" content="Manuel Bieri">\n' +
-        '    <meta name="year" content="2020">\n\n'
+        '    <meta name="year" content="2020">\n\n' +
         //'    <link rel="icon" href="icon/' + icon + '.ico" type="image/x-icon">' // no icons available at the moment
+        '    <title>' + icon + '</title>'
     );
 }
 
