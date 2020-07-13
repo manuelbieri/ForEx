@@ -90,7 +90,8 @@ for country in countries:
             while True:  # for multi use
                 try:
                     # insert indicator
-                    cursor_data.execute('UPDATE ' + country + ' SET D_' + str(indicator[1]) + '=? WHERE date=?', [point["value"], point["date"]])
+                    cursor_data.execute('UPDATE ' + country + ' SET D_' + str(indicator[1]) + '=? WHERE date=?',
+                                        [point["value"], point["date"]])
                     break
                 except sqlite3.OperationalError:
                     print('sqliteError2')
