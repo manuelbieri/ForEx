@@ -38,8 +38,9 @@ print(len(indicator_list))
 
 for country in countries:
     source_control_file = open('database/country_control.txt', 'a+')
+    source_control_file.seek(0)
     source_control = source_control_file.read()
-    source_control.split(',')
+    source_control = source_control.split(',')
     if country in source_control:
         print(country, 'already handled')
         continue
@@ -55,42 +56,52 @@ for country in countries:
     print('Starting', country)
     print('###########################################################################################################')
 
+    connect_data = sqlite3.connect('database/data.db')
+    cursor_data = connect_data.cursor()
+    try:
+        cursor_data.execute('CREATE TABLE ' + country + ' (date text)')
+    except sqlite3.OperationalError:
+        pass
+    for year in range(1960, 2020):
+        cursor_data.execute('''INSERT INTO ''' + country + ''' (date) VALUES (?)''', [year])
+
+    connect_data.commit()
+    connect_data.close()
+
     for indicator in indicator_list:
-        print(indicator)
+        print(indicator[2], country)
         try:
-            data = wbdata.get_data(indicator[1], country=countries, convert_date=False, pandas=False)
+            data = wbdata.get_data(indicator[2], country=country)
         except TypeError:
             # print('TypeError1')
             continue
         except ValueError:
             # print('ValueError1')
             continue
-        print(data)
+
+        connect_data = sqlite3.connect('database/data.db')
+        cursor_data = connect_data.cursor()
+
+        try:
+            cursor_data.execute('''ALTER TABLE ''' + country + ''' ADD COLUMN D_''' + str(indicator[1]) + ''' REAL''')
+        except sqlite3.OperationalError:
+            print('sqliteError1')
+
         for point in data:
-            print(point)
-        """
-        # append data to database
-        while True:  # for multi use
-            try:
-                connect_data = sqlite3.connect('database/source.db')
-                cursor_data = connect_data.cursor()
-                # second check if indicator exists
-                result = cursor_data.execute("select id_wb from indicator where id_wb=?", (indicator['id'],)).fetchall()
-                if len(result) != 0:
-                    print(indicator['id'], 'already in database')
+            print(point["indicator"]["id"], point["date"], point["value"])
+
+            # append data to database
+            while True:  # for multi use
+                try:
+                    # insert indicator
+                    print('UPDATE ' + country + ' SET D_' + str(indicator[1]) + '=? WHERE date=?', [point["value"], point["date"]])
+                    cursor_data.execute('UPDATE ' + country + ' SET D_' + str(indicator[1]) + '=? WHERE date=?', [point["value"], point["date"]])
                     break
-                # insert indicator
-                cursor_data.execute(
-                    '''INSERT INTO indicator(source, id_wb, name_wb, rating, datapoints, average_datapoints, indicated_number, indicated_names, min_year, max_year) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-                    (source, indicator['id'], indicator['name'], rating, counter, average, indicated_number,
-                     indicated_countries_str, min_date, max_date))
-                connect_data.commit()
-                connect_data.close()
-                print(indicator['id'], 'appended to database')
-                break
-            except sqlite3.OperationalError:
-                print('sqliteError2')
-        """
+                except sqlite3.OperationalError:
+                    print('sqliteError2')
+
+        connect_data.commit()
+        connect_data.close()
 
         # progress
         indicator_counter += 1
