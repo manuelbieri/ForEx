@@ -25,8 +25,6 @@ countries = ['AUS', 'BGR', 'BRA', 'CAN', 'CHE', 'CHN', 'CZE', 'DNK', 'GBR', 'HKG
              'ZAF', 'AUT', 'BEL', 'CYP', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT',
              'NLD', 'PRT', 'SVK', 'SVN', 'ESP']
 
-countries = ['CHE', 'GBR', 'ISR', 'IND', 'USA', 'FRA', 'DEU']
-
 connect_indicators = sqlite3.connect('database/source.db')
 cursor_indicators = connect_indicators.cursor()
 indicator_list = cursor_indicators.execute(
@@ -88,13 +86,10 @@ for country in countries:
             print('sqliteError1')
 
         for point in data:
-            print(point["indicator"]["id"], point["date"], point["value"])
-
             # append data to database
             while True:  # for multi use
                 try:
                     # insert indicator
-                    print('UPDATE ' + country + ' SET D_' + str(indicator[1]) + '=? WHERE date=?', [point["value"], point["date"]])
                     cursor_data.execute('UPDATE ' + country + ' SET D_' + str(indicator[1]) + '=? WHERE date=?', [point["value"], point["date"]])
                     break
                 except sqlite3.OperationalError:
