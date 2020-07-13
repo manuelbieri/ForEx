@@ -20,3 +20,4 @@ docs/.idea/inspectionProfiles/Project_Default.xml
 .idea/dataSources/7f986f35-ebb7-4116-be5d-5cad6db4d668.xml
 src/database/country_control.txt
 src/database/country_control.txt
+*.txt
