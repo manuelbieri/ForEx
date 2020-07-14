@@ -7,7 +7,7 @@
   },
   {
    "optionDest": "filenames",
-   "value": "C:/Users/41799/PycharmProjects/ForeignExchange/ForEx.py"
+   "value": "C:/Users/41799/Documents/GitHub/ForEx/src/ForEx.py"
   },
   {
    "optionDest": "onefile",
@@ -71,15 +71,23 @@
   },
   {
    "optionDest": "datas",
-   "value": "C:/Users/41799/PycharmProjects/ForeignExchange/database;database/"
-  },
-  {
-   "optionDest": "binaries",
-   "value": "C:/Users/41799/PycharmProjects/ForeignExchange/update_exe/updateData.exe;."
+   "value": "C:/Users/41799/Documents/GitHub/ForEx/src/database/data.db;database/"
   },
   {
    "optionDest": "datas",
-   "value": "C:/Users/41799/PycharmProjects/ForeignExchange/Icon/favicon.ico;Icon/."
+   "value": "C:/Users/41799/Documents/GitHub/ForEx/src/database/source.db;database/"
+  },
+  {
+   "optionDest": "binaries",
+   "value": "C:/Users/41799/Documents/GitHub/ForEx/src/database/updateData.exe;database/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/41799/Documents/GitHub/ForEx/src/database/currencies.db;database/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/41799/Documents/GitHub/ForEx/src/Icon/favicon.ico;icon/"
   }
  ],
  "nonPyinstallerOptions": {

@@ -302,7 +302,7 @@ class PlotCanvas(FigureCanvas):
                                        color=self.colors[self.color_counter])
                 self.color_controller()
 
-                self.dataset_plot.legend(self.dataset_legend, loc='upper center', ncol=1, bbox_to_anchor=(0.5, -0.05))
+                self.dataset_plot.legend(self.dataset_legend, loc='upper center', ncol=2, bbox_to_anchor=(0.5, -0.05))
         self.draw()
 
     def retrieve_currency_data(self):
@@ -336,21 +336,26 @@ class PlotCanvas(FigureCanvas):
         for option in flow_control:
             try:
                 if self.plot_data[option[0]][0] in ['true', True]:
-                    country = self.plot_data[option[1]][0][:2]
-                    dataset = self.plot_data[option[2]][0][4:]
-                    indicator_key = self.plot_data[option[2]][0][:2]
+                    country = self.plot_data[option[1]][0][:3]
 
-                    connect = sqlite3.connect("Countries/" + country + '.db')
+                    print(self.plot_data)
+                    print(self.plot_data[option[2]][0])
+
+                    dataset_key = self.plot_data[option[2]][0].split(': ')
+                    dataset = dataset_key[1]
+                    indicator_key = dataset_key[0]
+
+                    connect = sqlite3.connect("database/data.db")
                     cursor = connect.cursor()
-                    data = cursor.execute("SELECT date," + indicator_key + " FROM data").fetchall()
+                    data = cursor.execute("SELECT date, " + indicator_key + " FROM " + country).fetchall()
                     connect.close()
 
-                    valid_values = [value[1] for value in data if value[1] != 0]
-                    valid_dates = [datetime.strptime(value[0], '%Y-%m-%d') for value in data if value[1] != 0]
+                    valid_values = [value[1] for value in data]
+                    valid_dates = [datetime.strptime(value[0] + '-12-31', '%Y-%m-%d') for value in data]
 
                     self.dataset_values.append(valid_values)
                     self.dataset_dates.append(valid_dates)
-                    self.dataset_legend.append(dataset + '(' + country + ')')
+                    self.dataset_legend.append(dataset + ' - ' + country)
             except KeyError:
                 pass
 
@@ -386,11 +391,11 @@ class CommandParser(str):
 
         if not (not self.cmd):
             if 'update' in self.cmd:
-                if isfile('updateData.exe'):
-                    run("updateData.exe")
-                elif isfile('updateData.py'):
+                if isfile('database\\updateData.exe'):
+                    run('database\\updateData.exe')
+                elif isfile('database\\updateData.py'):
                     print('no executable updater available, runs with python ')
-                    exec(open("updateData.py").read())
+                    exec(open("database\\updateData.py").read())
                 else:
                     print("no updater available")
                 self.cmd.remove('update')
