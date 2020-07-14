@@ -11,7 +11,6 @@ from PyQt5.QtCore import Qt
 try:
     # Include in try/except block if you're also targeting Mac/Linux
     from PyQt5.QtWinExtras import QtWin
-
     app_id = 'marbl.forex.forex.0.0.3'
     QtWin.setCurrentProcessExplicitAppUserModelID(app_id)
 except ImportError:
@@ -49,17 +48,22 @@ currencies = ['IDR', 'BGN', 'EUR', 'ILS', 'GBP', 'DKK', 'CAD', 'JPY', 'HUF', 'RO
               'CHF', 'KRW', 'CNY', 'TRY', 'HRK', 'NZD', 'THB', 'USD', 'NOK', 'RUB', 'INR', 'MXN', 'CZK', 'BRL', 'PLN',
               'PHP', 'ZAR']
 
-currencies_combo = ['AUD - $   - Australian dollar', 'BGN - BGN - Bulgarian lev', 'BRL - R$  - Brazilian real',
-                    'CAD - $   - Canadian dollar', 'CHF - Fr. - Swiss franc', 'CNY - ¥   - Chinese/Yuan renminbi',
-                    'CZK - Kč  - Czech koruna', 'DKK - Kr  - Danish krone', 'EUR - €   - European Euro',
-                    'GBP - £   - British pound', 'HKD - HK$ - Hong Kong dollar', 'HRK - kn  - Croatian kuna',
-                    'HUF - Ft  - Hungarian forint', 'IDR - Rp  - Indonesian rupiah', 'ILS - ₪   - Israeli new sheqel',
-                    'INR - ₹   - Indian rupee', 'JPY - ¥   - Japanese yen', 'KRW - W   - South Korean won',
-                    'MXN - $   - Mexican peso', 'MYR - RM  - Malaysian ringgit', 'NOK - kr  - Norwegian krone',
-                    'NZD - NZ$ - New Zealand dollar', 'PHP - ₱   - Philippine peso', 'PLN - zł  - Polish zloty',
-                    'RON - L   - Romanian leu', 'RUB - R   - Russian ruble', 'SEK - kr  - Swedish krona',
-                    'SGD - S$  - Singapore dollar', 'THB - ฿   - Thai baht', 'TRY - TRY - Turkish new lira',
-                    'USD - US$ - United States dollar', 'ZAR - R   - South African rand']
+currencies_combo = ['AUD-$  -Australian dollar', 'BGN-BGN-Bulgarian lev', 'BRL-R$ -Brazilian real',
+                    'CAD-$  -Canadian dollar',
+                    'CHF-Fr.-Swiss franc', 'CNY-¥  -Chinese/Yuan renminbi', 'CZK-Kč -Czech koruna',
+                    'DKK-Kr -Danish krone',
+                    'EUR-€  -European Euro', 'GBP-£  -British pound', 'HKD-HK$-Hong Kong dollar',
+                    'HRK-kn -Croatian kuna',
+                    'HUF-Ft -Hungarian forint', 'IDR-Rp -Indonesian rupiah', 'ILS-₪  -Israeli new sheqel',
+                    'INR-₹  -Indian rupee',
+                    'JPY-¥  -Japanese yen', 'KRW-W  -South Korean won', 'MXN-$  -Mexican peso',
+                    'MYR-RM -Malaysian ringgit',
+                    'NOK-kr -Norwegian krone', 'NZD-NZ$-New Zealand dollar', 'PHP-₱  -Philippine peso',
+                    'PLN-zł -Polish zloty',
+                    'RON-L  -Romanian leu', 'RUB-R  -Russian ruble', 'SEK-kr -Swedish krona',
+                    'SGD-S$ -Singapore dollar',
+                    'THB-฿  -Thai baht', 'TRY-TRY-Turkish new lira', 'USD-US$-United States dollar',
+                    'ZAR-R  -South African rand']
 
 countries_combo = ['AUS - Australia', 'AUT - Austria', 'BEL - Belgium', 'BGR - Bulgaria', 'BRA - Brazil',
                    'CAN - Canada', 'CHE - Switzerland', 'CHN - China', 'CYP - Cyprus', 'CZE - Czechia', 'DEU - Germany',
@@ -71,6 +75,13 @@ countries_combo = ['AUS - Australia', 'AUT - Austria', 'BEL - Belgium', 'BGR - B
                    'PHL - Philippines', 'POL - Poland', 'PRT - Portugal', 'ROU - Romania', 'RUS - Russian Federation',
                    'SGP - Singapore', 'SVK - Slovakia', 'SVN - Slovenia', 'SWE - Sweden', 'THA - Thailand',
                    'TUR - Turkey', 'USA - United States', 'ZAF - South Africa']
+
+connect_indicators = sqlite3.connect('database/source.db')
+cursor_indicators = connect_indicators.cursor()
+dataset_combo = cursor_indicators.execute("SELECT id, name_wb FROM indicator WHERE status=1;").fetchall()
+connect_indicators.close()
+
+dataset_combo = ['D_' + str(i[0]) + ': ' + i[1] for i in dataset_combo]
 
 
 class App(QMainWindow):
@@ -122,8 +133,8 @@ class App(QMainWindow):
         self.country1.addItems(countries_combo)
 
         self.data1 = QComboBox()
-        self.data1.setToolTip('Select country')
-        self.data1.addItems(countries_combo)
+        self.data1.setToolTip('Select data set')
+        self.data1.addItems(dataset_combo)
         self.check3 = QCheckBox("show")
 
         self.country2 = QComboBox()
@@ -131,8 +142,8 @@ class App(QMainWindow):
         self.country2.addItems(countries_combo)
 
         self.data2 = QComboBox()
-        self.data2.setToolTip('Select country')
-        self.data2.addItems(countries_combo)
+        self.data2.setToolTip('Select data set')
+        self.data2.addItems(dataset_combo)
         self.check4 = QCheckBox("show")
 
         self.plot_button = QPushButton(self)
@@ -168,10 +179,13 @@ class App(QMainWindow):
 
         self.gridLayout.addWidget(self.plot_button, 0, 4, 2, 1)
 
-        self.gridLayout.setColumnMinimumWidth(0, 200)
-        self.gridLayout.setColumnMinimumWidth(1, 200)
-        self.gridLayout.setColumnMinimumWidth(2, 200)
-        self.gridLayout.setColumnMinimumWidth(3, 200)
+        for widget in [self.base_currency, self.quote_currency, self.base_currency1, self.quote_currency1]:
+            widget.setMinimumWidth(190)
+            widget.setMaximumWidth(280)
+
+        for widget in [self.country1, self.data1, self.country2, self.data2]:
+            widget.setMinimumWidth(200)
+            widget.setMaximumWidth(400)
 
         self.gridLayout.addWidget(self.command_line, 3, 0, 1, 4)
         self.gridLayout.addWidget(self.cmd_button, 3, 4, 1, 1)
