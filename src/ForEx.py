@@ -391,11 +391,11 @@ class CommandParser(str):
 
         if not (not self.cmd):
             if 'update' in self.cmd:
-                if isfile('database\\updateData.exe'):
-                    run('database\\updateData.exe')
-                elif isfile('database\\updateData.py'):
+                if isfile('updateData.exe'):
+                    run('updateData.exe')
+                elif isfile('updateData.py'):
                     print('no executable updater available, runs with python ')
-                    exec(open("database\\updateData.py").read())
+                    exec(open("updateData.py").read())
                 else:
                     print("no updater available")
                 self.cmd.remove('update')
