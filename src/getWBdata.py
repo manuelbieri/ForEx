@@ -30,7 +30,6 @@ cursor_indicators = connect_indicators.cursor()
 indicator_list = cursor_indicators.execute(
     "select source, id, id_wb, name_wb from indicator where (max_year='2018' or max_year='2019') and average_datapoints > 25 and indicated_number=50;").fetchall()
 connect_indicators.close()
-
 print(len(indicator_list))
 # print(indicator_list)
 
@@ -57,11 +56,11 @@ for country in countries:
     connect_data = sqlite3.connect('database/data.db')
     cursor_data = connect_data.cursor()
     try:
-        cursor_data.execute('CREATE TABLE ' + country + ' (date text)')
+        cursor_data.execute('CREATE TABLE ' + country + ' (pkey integer PRIMARY KEY, date text)')
     except sqlite3.OperationalError:
         pass
     for year in range(1960, 2020):
-        cursor_data.execute('''INSERT INTO ''' + country + ''' (date) VALUES (?)''', [year])
+        cursor_data.execute('''INSERT INTO ''' + country + ''' (pkey, date) VALUES (?, ?)''', [year - 1959, year])
 
     connect_data.commit()
     connect_data.close()
