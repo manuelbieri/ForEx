@@ -21,3 +21,8 @@ docs/.idea/inspectionProfiles/Project_Default.xml
 src/database/country_control.txt
 src/database/country_control.txt
 *.txt
+src/web/.idea/jsLibraryMappings.xml
+src/web/.idea/misc.xml
+src/web/.idea/modules.xml
+src/web/.idea/vcs.xml
+src/web/.idea/web.iml
