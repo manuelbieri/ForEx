@@ -21,9 +21,7 @@ serverPort = 8080
 
 # win
 index_file = os.path.join('web', 'index.html')
-main_folder = os.path.join('C:\\', 'Users', '41799', 'Documents', 'GitHub', 'ForEx', 'web')
-
-print(index_file)
+main_folder = os.path.join('C:\\', 'Users', '41799', 'Documents', 'GitHub', 'ForEx', 'src', 'web')
 
 
 class MyServer(BaseHTTPRequestHandler):
@@ -179,7 +177,7 @@ class MyServer(BaseHTTPRequestHandler):
 
         self.wfile.write(bytes(output_start[:-22], "utf-8"))
 
-        output = '<table class="table table-striped  table-hover">\n<thead>\n<tr>\n<th scope="col">Filename</th>\n<th '\
+        output = '<table class="table table-striped  table-hover">\n<thead>\n<tr>\n<th scope="col">Filename</th>\n<th ' \
                  'scope="col">Size (bytes)</th>\n</tr>\n</thead>\n<tbody>\n'
 
         path = 'C:\\Users\\41799\\PycharmProjects\\ForeignExchange'

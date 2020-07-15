@@ -338,9 +338,6 @@ class PlotCanvas(FigureCanvas):
                 if self.plot_data[option[0]][0] in ['true', True]:
                     country = self.plot_data[option[1]][0][:3]
 
-                    print(self.plot_data)
-                    print(self.plot_data[option[2]][0])
-
                     dataset_key = self.plot_data[option[2]][0].split(': ')
                     dataset = dataset_key[1]
                     indicator_key = dataset_key[0]
