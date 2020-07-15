@@ -4,34 +4,11 @@
     <title>FOREX - Data</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-    <style>
-        * {
-            font-family: "Courier New", serif;
-        }
-
-        body {
-            overflow-y: scroll;
-        }
-
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #jumbo {
-            padding: 20px;
-            margin: 0;
-        }
-
-        .active {
-            background: #e9ecef;
-        }
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/content.js"></script>
 </head>
 <body>
 
@@ -41,27 +18,10 @@
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navTog" aria-controls="navTog" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navTog">
-        <ul class="navbar-nav mx-auto mt-2 mt-lg-0 nav-fill w-100">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Data</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="downloads.html">Downloads</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="development.html">Development</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<script>
+    navbar('index');
+</script>
+
 <div class="container-fluid">
     <form method="post" name="plot_form">
         <div class="form-group">
@@ -69,383 +29,64 @@
                 <div class="col-lg-3 col-md-6">
                     <label for="bc1">Base currency one</label>
                     <select class="form-control" id="bc1" name="bc1">
-                        <option>AUD - $ - Australian dollar</option>
-                        <option>BGN - BGN - Bulgarian lev</option>
-                        <option>BRL - R$ - Brazilian real</option>
-                        <option>CAD - $ - Canadian dollar</option>
-                        <option>CHF - Fr. - Swiss franc</option>
-                        <option>CNY - ¥ - Chinese/Yuan renminbi</option>
-                        <option>CZK - Kč - Czech koruna</option>
-                        <option>DKK - Kr - Danish krone</option>
-                        <option>EUR - € - European Euro</option>
-                        <option>GBP - £ - British pound</option>
-                        <option>HKD - HK$ - Hong Kong dollar</option>
-                        <option>HRK - kn - Croatian kuna</option>
-                        <option>HUF - Ft - Hungarian forint</option>
-                        <option>IDR - Rp - Indonesian rupiah</option>
-                        <option>ILS - ₪ - Israeli new sheqel</option>
-                        <option>INR - ₹ - Indian rupee</option>
-                        <option>JPY - ¥ - Japanese yen</option>
-                        <option>KRW - W - South Korean won</option>
-                        <option>MXN - $ - Mexican peso</option>
-                        <option>MYR - RM - Malaysian ringgit</option>
-                        <option>NOK - kr - Norwegian krone</option>
-                        <option>NZD - NZ$ - New Zealand dollar</option>
-                        <option>PHP - ₱ - Philippine peso</option>
-                        <option>PLN - zł - Polish zloty</option>
-                        <option>RON - L - Romanian leu</option>
-                        <option>RUB - R - Russian ruble</option>
-                        <option>SEK - kr - Swedish krona</option>
-                        <option>SGD - S$ - Singapore dollar</option>
-                        <option>THB - ฿ - Thai baht</option>
-                        <option>TRY - TRY - Turkish new lira</option>
-                        <option>USD - US$ - United States dollar</option>
-                        <option>ZAR - R - South African rand</option>
+                        <script>
+                            load_combo('currencies');
+                        </script>
                     </select>
                     <label for="qc1">Quote currency one</label>
                     <select class="form-control" id="qc1" name="qc1">
-                        <option>AUD - $ - Australian dollar</option>
-                        <option>BGN - BGN - Bulgarian lev</option>
-                        <option>BRL - R$ - Brazilian real</option>
-                        <option>CAD - $ - Canadian dollar</option>
-                        <option>CHF - Fr. - Swiss franc</option>
-                        <option>CNY - ¥ - Chinese/Yuan renminbi</option>
-                        <option>CZK - Kč - Czech koruna</option>
-                        <option>DKK - Kr - Danish krone</option>
-                        <option>EUR - € - European Euro</option>
-                        <option>GBP - £ - British pound</option>
-                        <option>HKD - HK$ - Hong Kong dollar</option>
-                        <option>HRK - kn - Croatian kuna</option>
-                        <option>HUF - Ft - Hungarian forint</option>
-                        <option>IDR - Rp - Indonesian rupiah</option>
-                        <option>ILS - ₪ - Israeli new sheqel</option>
-                        <option>INR - ₹ - Indian rupee</option>
-                        <option>JPY - ¥ - Japanese yen</option>
-                        <option>KRW - W - South Korean won</option>
-                        <option>MXN - $ - Mexican peso</option>
-                        <option>MYR - RM - Malaysian ringgit</option>
-                        <option>NOK - kr - Norwegian krone</option>
-                        <option>NZD - NZ$ - New Zealand dollar</option>
-                        <option>PHP - ₱ - Philippine peso</option>
-                        <option>PLN - zł - Polish zloty</option>
-                        <option>RON - L - Romanian leu</option>
-                        <option>RUB - R - Russian ruble</option>
-                        <option>SEK - kr - Swedish krona</option>
-                        <option>SGD - S$ - Singapore dollar</option>
-                        <option>THB - ฿ - Thai baht</option>
-                        <option>TRY - TRY - Turkish new lira</option>
-                        <option>USD - US$ - United States dollar</option>
-                        <option>ZAR - R - South African rand</option>
+                        <script>
+                            load_combo('currencies');
+                        </script>
                     </select>
                     <label><input type="checkbox" value="true" name="exc1" checked> show</label>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <label for="bc2">Base currency two</label>
                     <select class="form-control" id="bc2" name="bc2">
-                        <option>AUD - $ - Australian dollar</option>
-                        <option>BGN - BGN - Bulgarian lev</option>
-                        <option>BRL - R$ - Brazilian real</option>
-                        <option>CAD - $ - Canadian dollar</option>
-                        <option>CHF - Fr. - Swiss franc</option>
-                        <option>CNY - ¥ - Chinese/Yuan renminbi</option>
-                        <option>CZK - Kč - Czech koruna</option>
-                        <option>DKK - Kr - Danish krone</option>
-                        <option>EUR - € - European Euro</option>
-                        <option>GBP - £ - British pound</option>
-                        <option>HKD - HK$ - Hong Kong dollar</option>
-                        <option>HRK - kn - Croatian kuna</option>
-                        <option>HUF - Ft - Hungarian forint</option>
-                        <option>IDR - Rp - Indonesian rupiah</option>
-                        <option>ILS - ₪ - Israeli new sheqel</option>
-                        <option>INR - ₹ - Indian rupee</option>
-                        <option>JPY - ¥ - Japanese yen</option>
-                        <option>KRW - W - South Korean won</option>
-                        <option>MXN - $ - Mexican peso</option>
-                        <option>MYR - RM - Malaysian ringgit</option>
-                        <option>NOK - kr - Norwegian krone</option>
-                        <option>NZD - NZ$ - New Zealand dollar</option>
-                        <option>PHP - ₱ - Philippine peso</option>
-                        <option>PLN - zł - Polish zloty</option>
-                        <option>RON - L - Romanian leu</option>
-                        <option>RUB - R - Russian ruble</option>
-                        <option>SEK - kr - Swedish krona</option>
-                        <option>SGD - S$ - Singapore dollar</option>
-                        <option>THB - ฿ - Thai baht</option>
-                        <option>TRY - TRY - Turkish new lira</option>
-                        <option>USD - US$ - United States dollar</option>
-                        <option>ZAR - R - South African rand</option>
+                        <script>
+                            load_combo('currencies');
+                        </script>
                     </select>
                     <label for="qc2">Quote currency two</label>
                     <select class="form-control" id="qc2" name="qc2">
-                        <option>AUD - $ - Australian dollar</option>
-                        <option>BGN - BGN - Bulgarian lev</option>
-                        <option>BRL - R$ - Brazilian real</option>
-                        <option>CAD - $ - Canadian dollar</option>
-                        <option>CHF - Fr. - Swiss franc</option>
-                        <option>CNY - ¥ - Chinese/Yuan renminbi</option>
-                        <option>CZK - Kč - Czech koruna</option>
-                        <option>DKK - Kr - Danish krone</option>
-                        <option>EUR - € - European Euro</option>
-                        <option>GBP - £ - British pound</option>
-                        <option>HKD - HK$ - Hong Kong dollar</option>
-                        <option>HRK - kn - Croatian kuna</option>
-                        <option>HUF - Ft - Hungarian forint</option>
-                        <option>IDR - Rp - Indonesian rupiah</option>
-                        <option>ILS - ₪ - Israeli new sheqel</option>
-                        <option>INR - ₹ - Indian rupee</option>
-                        <option>JPY - ¥ - Japanese yen</option>
-                        <option>KRW - W - South Korean won</option>
-                        <option>MXN - $ - Mexican peso</option>
-                        <option>MYR - RM - Malaysian ringgit</option>
-                        <option>NOK - kr - Norwegian krone</option>
-                        <option>NZD - NZ$ - New Zealand dollar</option>
-                        <option>PHP - ₱ - Philippine peso</option>
-                        <option>PLN - zł - Polish zloty</option>
-                        <option>RON - L - Romanian leu</option>
-                        <option>RUB - R - Russian ruble</option>
-                        <option>SEK - kr - Swedish krona</option>
-                        <option>SGD - S$ - Singapore dollar</option>
-                        <option>THB - ฿ - Thai baht</option>
-                        <option>TRY - TRY - Turkish new lira</option>
-                        <option>USD - US$ - United States dollar</option>
-                        <option>ZAR - R - South African rand</option>
+                        <script>
+                            load_combo('currencies');
+                        </script>
                     </select>
                     <label><input type="checkbox" value="true" name="exc2"> show</label>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <label for="co1">Country one</label>
                     <select class="form-control" id="co1" name="co1">
-                        <option>AT - Austria</option>
-                        <option>AU - Australia</option>
-                        <option>BE - Belgium</option>
-                        <option>BG - Bulgaria</option>
-                        <option>BR - Brazil</option>
-                        <option>CA - Canada</option>
-                        <option>CH - Switzerland</option>
-                        <option>CN - China</option>
-                        <option>CY - Cyprus</option>
-                        <option>CZ - Czechia</option>
-                        <option>DE - Germany</option>
-                        <option>DK - Denmark</option>
-                        <option>EE - Estonia</option>
-                        <option>ES - Spain</option>
-                        <option>FI - Finland</option>
-                        <option>FR - France</option>
-                        <option>GB - United Kingdom</option>
-                        <option>GR - Greece</option>
-                        <option>HK - Hong Kong</option>
-                        <option>HR - Croatia</option>
-                        <option>HU - Hungary</option>
-                        <option>ID - Indonesia</option>
-                        <option>IE - Ireland</option>
-                        <option>IL - Israel</option>
-                        <option>IN - India</option>
-                        <option>IT - Italy</option>
-                        <option>JP - Japan</option>
-                        <option>KR - Korea, Republic of</option>
-                        <option>LT - Lithuania</option>
-                        <option>LU - Luxembourg</option>
-                        <option>LV - Latvia</option>
-                        <option>MT - Malta</option>
-                        <option>MX - Mexico</option>
-                        <option>MY - Malaysia</option>
-                        <option>NL - Netherlands</option>
-                        <option>NO - Norway</option>
-                        <option>NZ - New Zealand</option>
-                        <option>PH - Philippines</option>
-                        <option>PL - Poland</option>
-                        <option>PT - Portugal</option>
-                        <option>RO - Romania</option>
-                        <option>RU - Russian Federation</option>
-                        <option>SE - Sweden</option>
-                        <option>SG - Singapore</option>
-                        <option>SI - Slovenia</option>
-                        <option>SK - Slovakia</option>
-                        <option>TH - Thailand</option>
-                        <option>TR - Turkey</option>
-                        <option>US - United States</option>
-                        <option>ZA - South Africa</option>
+                        <script>
+                            load_combo('countries');
+                        </script>
                     </select>
                     <label for="da1">Dataset one</label>
                     <select class="form-control" id="da1" name="da1">
-                        <option>aa. Official exchange rate, LCU per USD, period average</option>
-                        <option>ab. Exchange rate, new LCU per USD extended backward, period average</option>
-                        <option>ac. Exchange rate, old LCU per USD extended forward, period average</option>
-                        <option>ad. GDP,current US$,millions</option>
-                        <option>ae. GDP,current LCU,millions</option>
-                        <option>af. Employment to population ratio, ages 15-24, female (%)</option>
-                        <option>ag. Employment to population ratio, ages 15-24, male (%)</option>
-                        <option>ah. Employment to population ratio, ages 15-24, total (%)</option>
-                        <option>ai. Employment to population ratio, 15+, female (%)</option>
-                        <option>aj. Employment to population ratio, 15+, male (%)</option>
-                        <option>ak. Employment to population ratio, 15+, total (%)</option>
-                        <option>al. Ratio of female to male labor force participation rate (%)</option>
-                        <option>am. Self-employed, female (% of female employment)</option>
-                        <option>an. Self-employed, male (% of male employment)</option>
-                        <option>ao. Self-employed, total (% of total employment)</option>
-                        <option>ap. Vulnerable employment, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>aq. Vulnerable employment, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>ar. Vulnerable employment, total (% of total employment) (modeled ILO estimate)</option>
-                        <option>as. Contributing family workers, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>at. Contributing family workers, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>au. Contributing family workers, total (% of total employment) (modeled ILO estimate)</option>
-                        <option>av. GDP per person employed (constant 2011 PPP $)</option>
-                        <option>aw. Employment in agriculture, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>ax. Employment in agriculture, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>ay. Employment in agriculture (% of total employment) (modeled ILO estimate)</option>
-                        <option>az. Employers, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>ba. Employers, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>bb. Employers, total (% of total employment) (modeled ILO estimate)</option>
-                        <option>bc. Own-account workers, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>bd. Own-account workers, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>be. Wage and salaried workers, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>bf. Wage and salaried workers, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>bg. Wage and salaried workers, total (% of total employment) (modeled ILO estimate)</option>
-                        <option>bh. Employment in industry, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>bi. Employment in industry, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>bj. Employment in industry (% of total employment) (modeled ILO estimate)</option>
-                        <option>bk. Employment in services, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>bl. Employment in services, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>bm. Employment in services (% of total employment) (modeled ILO estimate)</option>
-                        <option>bn. Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate)</option>
-                        <option>bo. Labor force participation rate, male (% of male population ages 15+) (modeled ILO estimate)</option>
-                        <option>bp. Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)</option>
-                        <option>bq. Labor force, total</option>
-                        <option>br. Unemployment, youth female (% of female labor force ages 15-24) (modeled ILO estimate)</option>
-                        <option>bs. Unemployment, youth male (% of male labor force ages 15-24) (modeled ILO estimate)</option>
-                        <option>bt. Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)</option>
-                        <option>bu. Unemployment, female (% of female labor force) (modeled ILO estimate)</option>
-                        <option>bv. Unemployment, male (% of male labor force) (modeled ILO estimate)</option>
-                        <option>bw. Unemployment, total (% of total labor force) (modeled ILO estimate)</option>
-                        <option>bx. Labor force, female (% of total labor force)</option>
-                        <option>by. Labor force participation rate for ages 15-24, female (%) (modeled ILO estimate)</option>
-                        <option>bz. Labor force participation rate for ages 15-24, male (%) (modeled ILO estimate)</option>
-                        <option>ca. Labor force participation rate, female (% of female population ages 15-64) (modeled ILO estimate)</option>
-                        <option>cb. Labor force participation rate, male (% of male population ages 15-64) (modeled ILO estimate)</option>
-                        <option>cc. Labor force, female</option>
-                        <option>cd. Ratio of female to male youth unemployment rate (% ages 15-24) (modeled ILO estimate)</option>
-                        <option>ce. Labor force participation rate for ages 15-24, total (%) (modeled ILO estimate)</option>
-                        <option>cf. Labor force participation rate, total (% of total population ages 15-64) (modeled ILO estimate)</option>
+                        <script>
+                            load_combo('indicators');
+                        </script>
                     </select>
                     <label><input type="checkbox" value="true" name="dac1"> show</label>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <label for="co2">Country two</label>
                     <select class="form-control" id="co2" name="co2">
-                        <option>AT - Austria</option>
-                        <option>AU - Australia</option>
-                        <option>BE - Belgium</option>
-                        <option>BG - Bulgaria</option>
-                        <option>BR - Brazil</option>
-                        <option>CA - Canada</option>
-                        <option>CH - Switzerland</option>
-                        <option>CN - China</option>
-                        <option>CY - Cyprus</option>
-                        <option>CZ - Czechia</option>
-                        <option>DE - Germany</option>
-                        <option>DK - Denmark</option>
-                        <option>EE - Estonia</option>
-                        <option>ES - Spain</option>
-                        <option>FI - Finland</option>
-                        <option>FR - France</option>
-                        <option>GB - United Kingdom</option>
-                        <option>GR - Greece</option>
-                        <option>HK - Hong Kong</option>
-                        <option>HR - Croatia</option>
-                        <option>HU - Hungary</option>
-                        <option>ID - Indonesia</option>
-                        <option>IE - Ireland</option>
-                        <option>IL - Israel</option>
-                        <option>IN - India</option>
-                        <option>IT - Italy</option>
-                        <option>JP - Japan</option>
-                        <option>KR - Korea, Republic of</option>
-                        <option>LT - Lithuania</option>
-                        <option>LU - Luxembourg</option>
-                        <option>LV - Latvia</option>
-                        <option>MT - Malta</option>
-                        <option>MX - Mexico</option>
-                        <option>MY - Malaysia</option>
-                        <option>NL - Netherlands</option>
-                        <option>NO - Norway</option>
-                        <option>NZ - New Zealand</option>
-                        <option>PH - Philippines</option>
-                        <option>PL - Poland</option>
-                        <option>PT - Portugal</option>
-                        <option>RO - Romania</option>
-                        <option>RU - Russian Federation</option>
-                        <option>SE - Sweden</option>
-                        <option>SG - Singapore</option>
-                        <option>SI - Slovenia</option>
-                        <option>SK - Slovakia</option>
-                        <option>TH - Thailand</option>
-                        <option>TR - Turkey</option>
-                        <option>US - United States</option>
-                        <option>ZA - South Africa</option>
+                        <script>
+                            load_combo('countries');
+                        </script>
                     </select>
                     <label for="da2">Dataset two</label>
                     <select class="form-control" id="da2" name="da2">
-                        <option>aa. Official exchange rate, LCU per USD, period average</option>
-                        <option>ab. Exchange rate, new LCU per USD extended backward, period average</option>
-                        <option>ac. Exchange rate, old LCU per USD extended forward, period average</option>
-                        <option>ad. GDP,current US$,millions</option>
-                        <option>ae. GDP,current LCU,millions</option>
-                        <option>af. Employment to population ratio, ages 15-24, female (%)</option>
-                        <option>ag. Employment to population ratio, ages 15-24, male (%)</option>
-                        <option>ah. Employment to population ratio, ages 15-24, total (%)</option>
-                        <option>ai. Employment to population ratio, 15+, female (%)</option>
-                        <option>aj. Employment to population ratio, 15+, male (%)</option>
-                        <option>ak. Employment to population ratio, 15+, total (%)</option>
-                        <option>al. Ratio of female to male labor force participation rate (%)</option>
-                        <option>am. Self-employed, female (% of female employment)</option>
-                        <option>an. Self-employed, male (% of male employment)</option>
-                        <option>ao. Self-employed, total (% of total employment)</option>
-                        <option>ap. Vulnerable employment, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>aq. Vulnerable employment, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>ar. Vulnerable employment, total (% of total employment) (modeled ILO estimate)</option>
-                        <option>as. Contributing family workers, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>at. Contributing family workers, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>au. Contributing family workers, total (% of total employment) (modeled ILO estimate)</option>
-                        <option>av. GDP per person employed (constant 2011 PPP $)</option>
-                        <option>aw. Employment in agriculture, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>ax. Employment in agriculture, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>ay. Employment in agriculture (% of total employment) (modeled ILO estimate)</option>
-                        <option>az. Employers, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>ba. Employers, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>bb. Employers, total (% of total employment) (modeled ILO estimate)</option>
-                        <option>bc. Own-account workers, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>bd. Own-account workers, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>be. Wage and salaried workers, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>bf. Wage and salaried workers, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>bg. Wage and salaried workers, total (% of total employment) (modeled ILO estimate)</option>
-                        <option>bh. Employment in industry, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>bi. Employment in industry, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>bj. Employment in industry (% of total employment) (modeled ILO estimate)</option>
-                        <option>bk. Employment in services, female (% of female employment) (modeled ILO estimate)</option>
-                        <option>bl. Employment in services, male (% of male employment) (modeled ILO estimate)</option>
-                        <option>bm. Employment in services (% of total employment) (modeled ILO estimate)</option>
-                        <option>bn. Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate)</option>
-                        <option>bo. Labor force participation rate, male (% of male population ages 15+) (modeled ILO estimate)</option>
-                        <option>bp. Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)</option>
-                        <option>bq. Labor force, total</option>
-                        <option>br. Unemployment, youth female (% of female labor force ages 15-24) (modeled ILO estimate)</option>
-                        <option>bs. Unemployment, youth male (% of male labor force ages 15-24) (modeled ILO estimate)</option>
-                        <option>bt. Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)</option>
-                        <option>bu. Unemployment, female (% of female labor force) (modeled ILO estimate)</option>
-                        <option>bv. Unemployment, male (% of male labor force) (modeled ILO estimate)</option>
-                        <option>bw. Unemployment, total (% of total labor force) (modeled ILO estimate)</option>
-                        <option>bx. Labor force, female (% of total labor force)</option>
-                        <option>by. Labor force participation rate for ages 15-24, female (%) (modeled ILO estimate)</option>
-                        <option>bz. Labor force participation rate for ages 15-24, male (%) (modeled ILO estimate)</option>
-                        <option>ca. Labor force participation rate, female (% of female population ages 15-64) (modeled ILO estimate)</option>
-                        <option>cb. Labor force participation rate, male (% of male population ages 15-64) (modeled ILO estimate)</option>
-                        <option>cc. Labor force, female</option>
-                        <option>cd. Ratio of female to male youth unemployment rate (% ages 15-24) (modeled ILO estimate)</option>
-                        <option>ce. Labor force participation rate for ages 15-24, total (%) (modeled ILO estimate)</option>
-                        <option>cf. Labor force participation rate, total (% of total population ages 15-64) (modeled ILO estimate)</option>
+                        <script>
+                            load_combo('indicators');
+                        </script>
                     </select>
                     <label><input type="checkbox" value="true" name="dac2"> show</label>
                 </div>
+
             </div>
         </div>
         <button type="submit" class="btn btn-block btn-light"

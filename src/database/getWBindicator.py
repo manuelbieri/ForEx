@@ -94,7 +94,7 @@ for source in sources:
 
         while True:  # for multi use
             try:
-                connect = sqlite3.connect('database/source.db')
+                connect = sqlite3.connect('source.db')
                 cursor = connect.cursor()
                 # check if indicator is already inserted
                 result = cursor.execute("select id_wb from indicator where id_wb=?", (indicator['id'],)).fetchall()
@@ -223,7 +223,7 @@ for source in sources:
         # append indicator to database
         while True:  # for multi use
             try:
-                connect = sqlite3.connect('database/source.db')
+                connect = sqlite3.connect('source.db')
                 cursor = connect.cursor()
                 # second check if indicator exists
                 result = cursor.execute("select id_wb from indicator where id_wb=?", (indicator['id'],)).fetchall()

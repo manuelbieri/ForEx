@@ -25,7 +25,7 @@ countries = ['AUS', 'BGR', 'BRA', 'CAN', 'CHE', 'CHN', 'CZE', 'DNK', 'GBR', 'HKG
              'ZAF', 'AUT', 'BEL', 'CYP', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'IRL', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT',
              'NLD', 'PRT', 'SVK', 'SVN', 'ESP']
 
-connect_indicators = sqlite3.connect('database/source.db')
+connect_indicators = sqlite3.connect('source.db')
 cursor_indicators = connect_indicators.cursor()
 indicator_list = cursor_indicators.execute(
     "select source, id, id_wb, name_wb from indicator where (max_year='2018' or max_year='2019') and average_datapoints > 25 and indicated_number=50;").fetchall()
@@ -53,7 +53,7 @@ for country in countries:
     print('Starting', country)
     print('###########################################################################################################')
 
-    connect_data = sqlite3.connect('database/data.db')
+    connect_data = sqlite3.connect('data.db')
     cursor_data = connect_data.cursor()
     try:
         cursor_data.execute('CREATE TABLE ' + country + ' (pkey integer PRIMARY KEY, date text)')
@@ -76,7 +76,7 @@ for country in countries:
             # print('ValueError1')
             continue
 
-        connect_data = sqlite3.connect('database/data.db')
+        connect_data = sqlite3.connect('data.db')
         cursor_data = connect_data.cursor()
 
         try:

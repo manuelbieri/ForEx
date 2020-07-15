@@ -20,8 +20,8 @@ serverPort = 8080
 # main_folder = os.path.join('/home', 'manuel', 'forex')
 
 # win
-index_file = os.path.join('C:\\', 'Users', '41799', 'WebstormProjects', 'test', 'index.html')
-main_folder = os.path.join('C:\\', 'Users', '41799', 'PycharmProjects', 'ForeignExchange', )
+index_file = os.path.join('web', 'index.html')
+main_folder = os.path.join('C:\\', 'Users', '41799', 'Documents', 'GitHub', 'ForEx', 'web')
 
 print(index_file)
 

@@ -1,5 +1,6 @@
 import sqlite3
 
+"""
 connect_1 = sqlite3.connect('database/data.db')
 cursor_1 = connect_1.cursor()
 indicator_list = cursor_1.execute('PRAGMA table_info(CHE)').fetchall()
@@ -16,4 +17,15 @@ for indicator in indicator_list[2:]:
 
 connect_2.commit()
 connect_2.close()
+"""
+
+connect_indicators = sqlite3.connect('database/source.db')
+cursor_indicators = connect_indicators.cursor()
+dataset_combo = cursor_indicators.execute("SELECT id, name_wb FROM indicator WHERE status=1;").fetchall()
+connect_indicators.close()
+
+dataset_combo = ['D_' + str(i[0]) + ': ' + i[1] for i in dataset_combo]
+
+print(dataset_combo)
+
 

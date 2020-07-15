@@ -1,0 +1,22 @@
+* {
+    font-family: "Courier New", serif;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#jumbo {
+    padding: 20px;
+    margin: 0;
+}
+
+.active {
+    background: #e9ecef;
+}
