@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FOREX - About</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        * {
+            font-family: "Courier New", serif;
+        }
+
+        body {
+            overflow-y: scroll;
+        }
+
+        table {
+            margin-top: 20px;
+        }
+
+        #jumbo {
+            padding: 20px;
+            margin: 0;
+        }
+
+        .active {
+            background: #e9ecef;
+        }
+
+        .table-hover tbody tr:hover td {
+            background: #007bff;
+            color: white;
+        }
+
+        .table-hover tbody tr:hover td a {
+            background: #007bff;
+            color: white;
+        }
+
+        .card-header {
+            background-color: #f8f9fa;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="jumbotron jumbotron-fluid text-center" id="jumbo">
+    <div class="container">
+        <a href="index.html" style="text-decoration: none"><h1><b>FOReign EXchange</b></h1></a>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navTog" aria-controls="navTog"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navTog">
+        <ul class="navbar-nav mx-auto mt-2 mt-lg-0 nav-fill w-100">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Data</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="downloads.html">Downloads</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="development.html">Development</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container" style="margin-top: 20px">
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="pythonModules">
+                <h5 class="mb-0">
+                    <button class="btn btn-light collapsed" data-toggle="collapse" data-target="#collapsePythonModules"
+                            aria-expanded="true" aria-controls="collapsePythonModules">
+                        Python Modules
+                    </button>
+                </h5>
+            </div>
+            <div id="collapsePythonModules" class="collapse" aria-labelledby="pythonModules" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Version</th>
+                                <th scope="col">License</th>
+                                <th scope="col">Pypi</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>forex_python</td>
+                                <td>1.5</td>
+                                <td>MIT License</td>
+                                <td><a href="https://pypi.org/project/forex-python/">https://pypi.org/project/forex-python/</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>pycountry</td>
+                                <td>19.8</td>
+                                <td>GNU Lesser General Public License v2</td>
+                                <td>
+                                    <a href="https://pypi.org/project/pycountry/">https://pypi.org/project/pycountry/</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>wbdata</td>
+                                <td>0.2</td>
+                                <td>GNU General Public License v2 or later</td>
+                                <td><a href="https://pypi.org/project/wbdata/">https://pypi.org/project/wbdata/</a></td>
+                            </tr>
+                            <tr>
+                                <td>matplotlib</td>
+                                <td>3.2</td>
+                                <td>Python Software Foundation License</td>
+                                <td>
+                                    <a href="https://pypi.org/project/matplotlib/">https://pypi.org/project/matplotlib/</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>pandas</td>
+                                <td>1.0</td>
+                                <td>BSD 3 License</td>
+                                <td><a href="https://pypi.org/project/pandas/">https://pypi.org/project/pandas/</a></td>
+                            </tr>
+                            <tr>
+                                <td>PyQt5</td>
+                                <td>5.14</td>
+                                <td>GNU General Public License v3</td>
+                                <td><a href="https://pypi.org/project/PyQt5/">https://pypi.org/project/PyQt5/</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="WebTechnologies">
+                <h5 class="mb-0">
+                    <button class="btn btn-light collapsed" data-toggle="collapse"
+                            data-target="#collapseWebTechnologies" aria-expanded="false"
+                            aria-controls="collapseWebTechnologies">
+                        Web technologies
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseWebTechnologies" class="collapse" aria-labelledby="WebTechnologies"
+                 data-parent="#accordion">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped  table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Version</th>
+                                <th scope="col">Homepage</th>
+                                <th scope="col">w3school</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Html</td>
+                                <td>5.2</td>
+                                <td><a href="https://www.w3.org/html">www.w3.org/html</a></td>
+                                <td><a href="https://www.w3schools.com/html/default.asp">www.w3schools.com/html</a></td>
+                            </tr>
+                            <tr>
+                                <td>CSS</td>
+                                <td>4</td>
+                                <td><a href="https://www.w3.org/Style/CSS/">www.w3.org/Style/CSS/</a></td>
+                                <td><a href="https://www.w3schools.com/css/default.asp">www.w3schools.com/css</a></td>
+                            </tr>
+                            <tr>
+                                <td>Bootstrap</td>
+                                <td>4</td>
+                                <td><a href="https://getbootstrap.com/">getbootstrap.com</a></td>
+                                <td><a href="https://www.w3schools.com/bootstrap4/default.asp">www.w3schools.com/bootstrap4</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>JQuery</td>
+                                <td>3.4</td>
+                                <td><a href="https://jquery.com/">jquery.com</a></td>
+                                <td><a href="https://www.w3schools.com/jquery/default.asp">www.w3schools.com/jquery</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="DataSources">
+                <h5 class="mb-0">
+                    <button class="btn btn-light collapsed" data-toggle="collapse" data-target="#collapseDataSources"
+                            aria-expanded="false" aria-controls="collapseDataSources">
+                        Data sources
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseDataSources" class="collapse" aria-labelledby="DataSources" data-parent="#accordion">
+                <div class="card-body">
+                    <h6><b>Currency data</b></h6>
+                    <p>All the currency data was retrieved from the official ECB database via forex_python.</p>
+                    <h6><b>Country data</b></h6>
+                    <p>All the country data was retrieved from the official World Bank database via wbdata. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

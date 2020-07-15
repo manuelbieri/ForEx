@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FOREX - Development</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        * {
+            font-family: "Courier New", serif;
+        }
+
+        body {
+            overflow-y: scroll;
+        }
+
+        #jumbo {
+            padding: 20px;
+            margin: 0;
+        }
+
+        .active {
+            background: #e9ecef; color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="jumbotron jumbotron-fluid text-center" id="jumbo">
+    <div class="container">
+        <a href="index.html" style="text-decoration: none"><h1><b>FOReign EXchange</b></h1></a>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navTog" aria-controls="navTog" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navTog">
+        <ul class="navbar-nav mx-auto mt-2 mt-lg-0 nav-fill w-100">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Data</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="downloads.html">Downloads</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="development.html">Development</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <form method="post" name="login">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-block btn-light"
+                style="border-style: none none solid none;border-color: lightgray">Submit
+        </button>
+    </form>
+</div>
+</body>
+</html>

@@ -23,6 +23,8 @@ serverPort = 8080
 index_file = os.path.join('C:\\', 'Users', '41799', 'WebstormProjects', 'test', 'index.html')
 main_folder = os.path.join('C:\\', 'Users', '41799', 'PycharmProjects', 'ForeignExchange', )
 
+print(index_file)
+
 
 class MyServer(BaseHTTPRequestHandler):
     def __init__(self, request, client_address, server):
@@ -118,7 +120,7 @@ class MyServer(BaseHTTPRequestHandler):
             return
 
     def login_request(self):
-        connection = sqlite3.connect('Properties/users.db')
+        connection = sqlite3.connect('database/users.db')
         cursor = connection.cursor()
 
         try:

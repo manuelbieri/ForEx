@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <title>FOREX - Download</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        * {
+            font-family: "Courier New", serif;
+        }
+
+        body {
+            overflow-y: scroll;
+        }
+
+        table {
+            margin-top: 20px;
+        }
+
+        #jumbo {
+            padding: 20px;
+            margin: 0;
+        }
+
+        .active {
+            background: #e9ecef;
+        }
+
+        .table-hover tbody tr:hover td {
+            background: #007bff;
+            color: white;
+        }
+
+        .table-hover tbody tr:hover td a{
+            background: #007bff;
+            color: white;
+        }
+
+        .card-header {
+            background-color: #f8f9fa;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="jumbotron jumbotron-fluid text-center" id="jumbo">
+    <div class="container">
+        <a href="index.html" style="text-decoration: none"><h1><b>FOReign EXchange</b></h1></a>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navTog" aria-controls="navTog"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navTog">
+        <ul class="navbar-nav mx-auto mt-2 mt-lg-0 nav-fill w-100">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Data</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="downloads.html">Downloads</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="development.html">Development</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container" style="margin-top: 20px">
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="currencyData">
+                <h5 class="mb-0">
+                    <button class="btn btn-light collapsed" data-toggle="collapse" data-target="#collapseCurrencyData" aria-expanded="true" aria-controls="collapseCurrencyData">
+                        Currency data
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseCurrencyData" class="collapse" aria-labelledby="currencyData" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">Currency</th>
+                                <th scope="col">Symbol</th>
+                                <th scope="col">db-file</th>
+                                <th scope="col">xlsx-file</th>
+                                <th scope="col">csv-file</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Australian dollar</td>
+                                <td>$</td>
+                                <td><a href="Currencies_work\AUD.db" download>AUD.db</a></td>
+                                <td><a href="Currencies_xlsx\AUD.xlsx" download>AUD.xlsx</a></td>
+                                <td><a href="Currencies_csv\AUD.csv" download>AUD.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Bulgarian lev</td>
+                                <td>BGN</td>
+                                <td><a href="Currencies_work\BGN.db" download>BGN.db</a></td>
+                                <td><a href="Currencies_xlsx\BGN.xlsx" download>BGN.xlsx</a></td>
+                                <td><a href="Currencies_csv\BGN.csv" download>BGN.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Brazilian real</td>
+                                <td>R$</td>
+                                <td><a href="Currencies_work\BRL.db" download>BRL.db</a></td>
+                                <td><a href="Currencies_xlsx\BRL.xlsx" download>BRL.xlsx</a></td>
+                                <td><a href="Currencies_csv\BRL.csv" download>BRL.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Canadian dollar</td>
+                                <td>$</td>
+                                <td><a href="Currencies_work\CAD.db" download>CAD.db</a></td>
+                                <td><a href="Currencies_xlsx\CAD.xlsx" download>CAD.xlsx</a></td>
+                                <td><a href="Currencies_csv\CAD.csv" download>CAD.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Swiss franc</td>
+                                <td>Fr.</td>
+                                <td><a href="Currencies_work\CHF.db" download>CHF.db</a></td>
+                                <td><a href="Currencies_xlsx\CHF.xlsx" download>CHF.xlsx</a></td>
+                                <td><a href="Currencies_csv\CHF.csv" download>CHF.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Chinese/Yuan renminbi</td>
+                                <td>¥</td>
+                                <td><a href="Currencies_work\CNY.db" download>CNY.db</a></td>
+                                <td><a href="Currencies_xlsx\CNY.xlsx" download>CNY.xlsx</a></td>
+                                <td><a href="Currencies_csv\CNY.csv" download>CNY.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Czech koruna</td>
+                                <td>Kč</td>
+                                <td><a href="Currencies_work\CZK.db" download>CZK.db</a></td>
+                                <td><a href="Currencies_xlsx\CZK.xlsx" download>CZK.xlsx</a></td>
+                                <td><a href="Currencies_csv\CZK.csv" download>CZK.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Danish krone</td>
+                                <td>Kr</td>
+                                <td><a href="Currencies_work\DKK.db" download>DKK.db</a></td>
+                                <td><a href="Currencies_xlsx\DKK.xlsx" download>DKK.xlsx</a></td>
+                                <td><a href="Currencies_csv\DKK.csv" download>DKK.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>European Euro</td>
+                                <td>€</td>
+                                <td><a href="Currencies_work\EUR.db" download>EUR.db</a></td>
+                                <td><a href="Currencies_xlsx\EUR.xlsx" download>EUR.xlsx</a></td>
+                                <td><a href="Currencies_csv\EUR.csv" download>EUR.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>British pound</td>
+                                <td>£</td>
+                                <td><a href="Currencies_work\GBP.db" download>GBP.db</a></td>
+                                <td><a href="Currencies_xlsx\GBP.xlsx" download>GBP.xlsx</a></td>
+                                <td><a href="Currencies_csv\GBP.csv" download>GBP.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Hong Kong dollar</td>
+                                <td>HK$</td>
+                                <td><a href="Currencies_work\HKD.db" download>HKD.db</a></td>
+                                <td><a href="Currencies_xlsx\HKD.xlsx" download>HKD.xlsx</a></td>
+                                <td><a href="Currencies_csv\HKD.csv" download>HKD.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Croatian kuna</td>
+                                <td>kn</td>
+                                <td><a href="Currencies_work\HRK.db" download>HRK.db</a></td>
+                                <td><a href="Currencies_xlsx\HRK.xlsx" download>HRK.xlsx</a></td>
+                                <td><a href="Currencies_csv\HRK.csv" download>HRK.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Hungarian forint</td>
+                                <td>Ft</td>
+                                <td><a href="Currencies_work\HUF.db" download>HUF.db</a></td>
+                                <td><a href="Currencies_xlsx\HUF.xlsx" download>HUF.xlsx</a></td>
+                                <td><a href="Currencies_csv\HUF.csv" download>HUF.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Indonesian rupiah</td>
+                                <td>Rp</td>
+                                <td><a href="Currencies_work\IDR.db" download>IDR.db</a></td>
+                                <td><a href="Currencies_xlsx\IDR.xlsx" download>IDR.xlsx</a></td>
+                                <td><a href="Currencies_csv\IDR.csv" download>IDR.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Israeli new sheqel</td>
+                                <td>₪</td>
+                                <td><a href="Currencies_work\ILS.db" download>ILS.db</a></td>
+                                <td><a href="Currencies_xlsx\ILS.xlsx" download>ILS.xlsx</a></td>
+                                <td><a href="Currencies_csv\ILS.csv" download>ILS.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Indian rupee</td>
+                                <td>₹</td>
+                                <td><a href="Currencies_work\INR.db" download>INR.db</a></td>
+                                <td><a href="Currencies_xlsx\INR.xlsx" download>INR.xlsx</a></td>
+                                <td><a href="Currencies_csv\INR.csv" download>INR.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Japanese yen</td>
+                                <td>¥</td>
+                                <td><a href="Currencies_work\JPY.db" download>JPY.db</a></td>
+                                <td><a href="Currencies_xlsx\JPY.xlsx" download>JPY.xlsx</a></td>
+                                <td><a href="Currencies_csv\JPY.csv" download>JPY.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>South Korean won</td>
+                                <td>W</td>
+                                <td><a href="Currencies_work\KRW.db" download>KRW.db</a></td>
+                                <td><a href="Currencies_xlsx\KRW.xlsx" download>KRW.xlsx</a></td>
+                                <td><a href="Currencies_csv\KRW.csv" download>KRW.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Mexican peso</td>
+                                <td>$</td>
+                                <td><a href="Currencies_work\MXN.db" download>MXN.db</a></td>
+                                <td><a href="Currencies_xlsx\MXN.xlsx" download>MXN.xlsx</a></td>
+                                <td><a href="Currencies_csv\MXN.csv" download>MXN.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Malaysian ringgit</td>
+                                <td>RM</td>
+                                <td><a href="Currencies_work\MYR.db" download>MYR.db</a></td>
+                                <td><a href="Currencies_xlsx\MYR.xlsx" download>MYR.xlsx</a></td>
+                                <td><a href="Currencies_csv\MYR.csv" download>MYR.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Norwegian krone</td>
+                                <td>kr</td>
+                                <td><a href="Currencies_work\NOK.db" download>NOK.db</a></td>
+                                <td><a href="Currencies_xlsx\NOK.xlsx" download>NOK.xlsx</a></td>
+                                <td><a href="Currencies_csv\NOK.csv" download>NOK.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>New Zealand dollar</td>
+                                <td>NZ$</td>
+                                <td><a href="Currencies_work\NZD.db" download>NZD.db</a></td>
+                                <td><a href="Currencies_xlsx\NZD.xlsx" download>NZD.xlsx</a></td>
+                                <td><a href="Currencies_csv\NZD.csv" download>NZD.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Philippine peso</td>
+                                <td>₱</td>
+                                <td><a href="Currencies_work\PHP.db" download>PHP.db</a></td>
+                                <td><a href="Currencies_xlsx\PHP.xlsx" download>PHP.xlsx</a></td>
+                                <td><a href="Currencies_csv\PHP.csv" download>PHP.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Polish zloty</td>
+                                <td>zł</td>
+                                <td><a href="Currencies_work\PLN.db" download>PLN.db</a></td>
+                                <td><a href="Currencies_xlsx\PLN.xlsx" download>PLN.xlsx</a></td>
+                                <td><a href="Currencies_csv\PLN.csv" download>PLN.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Romanian leu</td>
+                                <td>L</td>
+                                <td><a href="Currencies_work\RON.db" download>RON.db</a></td>
+                                <td><a href="Currencies_xlsx\RON.xlsx" download>RON.xlsx</a></td>
+                                <td><a href="Currencies_csv\RON.csv" download>RON.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Russian ruble</td>
+                                <td>R</td>
+                                <td><a href="Currencies_work\RUB.db" download>RUB.db</a></td>
+                                <td><a href="Currencies_xlsx\RUB.xlsx" download>RUB.xlsx</a></td>
+                                <td><a href="Currencies_csv\RUB.csv" download>RUB.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Swedish krona</td>
+                                <td>kr</td>
+                                <td><a href="Currencies_work\SEK.db" download>SEK.db</a></td>
+                                <td><a href="Currencies_xlsx\SEK.xlsx" download>SEK.xlsx</a></td>
+                                <td><a href="Currencies_csv\SEK.csv" download>SEK.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Singapore dollar</td>
+                                <td>S$</td>
+                                <td><a href="Currencies_work\SGD.db" download>SGD.db</a></td>
+                                <td><a href="Currencies_xlsx\SGD.xlsx" download>SGD.xlsx</a></td>
+                                <td><a href="Currencies_csv\SGD.csv" download>SGD.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Thai baht</td>
+                                <td>฿</td>
+                                <td><a href="Currencies_work\THB.db" download>THB.db</a></td>
+                                <td><a href="Currencies_xlsx\THB.xlsx" download>THB.xlsx</a></td>
+                                <td><a href="Currencies_csv\THB.csv" download>THB.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>Turkish new lira</td>
+                                <td>TRY</td>
+                                <td><a href="Currencies_work\TRY.db" download>TRY.db</a></td>
+                                <td><a href="Currencies_xlsx\TRY.xlsx" download>TRY.xlsx</a></td>
+                                <td><a href="Currencies_csv\TRY.csv" download>TRY.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>United States dollar</td>
+                                <td>US$</td>
+                                <td><a href="Currencies_work\USD.db" download>USD.db</a></td>
+                                <td><a href="Currencies_xlsx\USD.xlsx" download>USD.xlsx</a></td>
+                                <td><a href="Currencies_csv\USD.csv" download>USD.csv</a></td>
+                            </tr>
+                            <tr>
+                                <td>South African rand</td>
+                                <td>R</td>
+                                <td><a href="Currencies_work\ZAR.db" download>ZAR.db</a></td>
+                                <td><a href="Currencies_xlsx\ZAR.xlsx" download>ZAR.xlsx</a></td>
+                                <td><a href="Currencies_csv\ZAR.csv" download>ZAR.csv</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="currencyDataHelp">
+                <h5 class="mb-0">
+                    <button class="btn btn-light collapsed" data-toggle="collapse" data-target="#collapseCurrencyDataHelp" aria-expanded="false" aria-controls="collapseCurrencyDataHelp">
+                        How to read the currency data
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseCurrencyDataHelp" class="collapse" aria-labelledby="currencyDataHelp" data-parent="#accordion">
+                <div class="card-body">
+                    <!--Table-->
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="countryData">
+                <h5 class="mb-0">
+                    <button class="btn btn-light collapsed" data-toggle="collapse" data-target="#collapseCountryData" aria-expanded="false" aria-controls="collapseCountryData">
+                        Country data
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseCountryData" class="collapse" aria-labelledby="countryData" data-parent="#accordion">
+                <div class="card-body">
+                    <table class="table table-striped  table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">Country</th>
+                            <th scope="col">Country code</th>
+                            <th scope="col">db-file</th>
+                            <th scope="col">xlsx-file</th>
+                            <th scope="col">csv-file</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Austria</td>
+                            <td>AUT</td>
+                            <td><a href="Countries\AT.db" download>AT.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Australia</td>
+                            <td>AUS</td>
+                            <td><a href="Countries\AU.db" download>AU.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Belgium</td>
+                            <td>BEL</td>
+                            <td><a href="Countries\BE.db" download>BE.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Bulgaria</td>
+                            <td>BGR</td>
+                            <td><a href="Countries\BG.db" download>BG.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Brazil</td>
+                            <td>BRA</td>
+                            <td><a href="Countries\BR.db" download>BR.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Canada</td>
+                            <td>CAN</td>
+                            <td><a href="Countries\CA.db" download>CA.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Switzerland</td>
+                            <td>CHE</td>
+                            <td><a href="Countries\CH.db" download>CH.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>China</td>
+                            <td>CHN</td>
+                            <td><a href="Countries\CN.db" download>CN.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Cyprus</td>
+                            <td>CYP</td>
+                            <td><a href="Countries\CY.db" download>CY.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Czechia</td>
+                            <td>CZE</td>
+                            <td><a href="Countries\CZ.db" download>CZ.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Germany</td>
+                            <td>DEU</td>
+                            <td><a href="Countries\DE.db" download>DE.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Denmark</td>
+                            <td>DNK</td>
+                            <td><a href="Countries\DK.db" download>DK.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Estonia</td>
+                            <td>EST</td>
+                            <td><a href="Countries\EE.db" download>EE.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Spain</td>
+                            <td>ESP</td>
+                            <td><a href="Countries\ES.db" download>ES.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Finland</td>
+                            <td>FIN</td>
+                            <td><a href="Countries\FI.db" download>FI.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>France</td>
+                            <td>FRA</td>
+                            <td><a href="Countries\FR.db" download>FR.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>United Kingdom</td>
+                            <td>GBR</td>
+                            <td><a href="Countries\GB.db" download>GB.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Greece</td>
+                            <td>GRC</td>
+                            <td><a href="Countries\GR.db" download>GR.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Hong Kong</td>
+                            <td>HKG</td>
+                            <td><a href="Countries\HK.db" download>HK.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Croatia</td>
+                            <td>HRV</td>
+                            <td><a href="Countries\HR.db" download>HR.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Hungary</td>
+                            <td>HUN</td>
+                            <td><a href="Countries\HU.db" download>HU.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Indonesia</td>
+                            <td>IDN</td>
+                            <td><a href="Countries\ID.db" download>ID.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Ireland</td>
+                            <td>IRL</td>
+                            <td><a href="Countries\IE.db" download>IE.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Israel</td>
+                            <td>ISR</td>
+                            <td><a href="Countries\IL.db" download>IL.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>India</td>
+                            <td>IND</td>
+                            <td><a href="Countries\IN.db" download>IN.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Italy</td>
+                            <td>ITA</td>
+                            <td><a href="Countries\IT.db" download>IT.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Japan</td>
+                            <td>JPN</td>
+                            <td><a href="Countries\JP.db" download>JP.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Korea, Republic of</td>
+                            <td>KOR</td>
+                            <td><a href="Countries\KR.db" download>KR.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Lithuania</td>
+                            <td>LTU</td>
+                            <td><a href="Countries\LT.db" download>LT.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Luxembourg</td>
+                            <td>LUX</td>
+                            <td><a href="Countries\LU.db" download>LU.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Latvia</td>
+                            <td>LVA</td>
+                            <td><a href="Countries\LV.db" download>LV.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Malta</td>
+                            <td>MLT</td>
+                            <td><a href="Countries\MT.db" download>MT.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Mexico</td>
+                            <td>MEX</td>
+                            <td><a href="Countries\MX.db" download>MX.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Malaysia</td>
+                            <td>MYS</td>
+                            <td><a href="Countries\MY.db" download>MY.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Netherlands</td>
+                            <td>NLD</td>
+                            <td><a href="Countries\NL.db" download>NL.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Norway</td>
+                            <td>NOR</td>
+                            <td><a href="Countries\NO.db" download>NO.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>New Zealand</td>
+                            <td>NZL</td>
+                            <td><a href="Countries\NZ.db" download>NZ.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Philippines</td>
+                            <td>PHL</td>
+                            <td><a href="Countries\PH.db" download>PH.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Poland</td>
+                            <td>POL</td>
+                            <td><a href="Countries\PL.db" download>PL.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Portugal</td>
+                            <td>PRT</td>
+                            <td><a href="Countries\PT.db" download>PT.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Romania</td>
+                            <td>ROU</td>
+                            <td><a href="Countries\RO.db" download>RO.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Russian Federation</td>
+                            <td>RUS</td>
+                            <td><a href="Countries\RU.db" download>RU.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Sweden</td>
+                            <td>SWE</td>
+                            <td><a href="Countries\SE.db" download>SE.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Singapore</td>
+                            <td>SGP</td>
+                            <td><a href="Countries\SG.db" download>SG.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Slovenia</td>
+                            <td>SVN</td>
+                            <td><a href="Countries\SI.db" download>SI.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Slovakia</td>
+                            <td>SVK</td>
+                            <td><a href="Countries\SK.db" download>SK.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Thailand</td>
+                            <td>THA</td>
+                            <td><a href="Countries\TH.db" download>TH.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>Turkey</td>
+                            <td>TUR</td>
+                            <td><a href="Countries\TR.db" download>TR.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>United States</td>
+                            <td>USA</td>
+                            <td><a href="Countries\US.db" download>US.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>South Africa</td>
+                            <td>ZAF</td>
+                            <td><a href="Countries\ZA.db" download>ZA.db</a></td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="countryDataHelp">
+                <h5 class="mb-0">
+                    <button class="btn btn-light collapsed" data-toggle="collapse" data-target="#collapseCountryDataHelp" aria-expanded="false" aria-controls="collapseCountryDataHelp">
+                        How to read the country data
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseCountryDataHelp" class="collapse" aria-labelledby="countryDataHelp" data-parent="#accordion">
+                <div class="card-body">
+                    <!--Table-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
