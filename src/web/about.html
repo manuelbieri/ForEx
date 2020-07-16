@@ -1,50 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>FOREX - About</title>
+    <title>FOREX - Data</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-    <style>
-        * {
-            font-family: "Courier New", serif;
-        }
-
-        body {
-            overflow-y: scroll;
-        }
-
-        table {
-            margin-top: 20px;
-        }
-
-        #jumbo {
-            padding: 20px;
-            margin: 0;
-        }
-
-        .active {
-            background: #e9ecef;
-        }
-
-        .table-hover tbody tr:hover td {
-            background: #007bff;
-            color: white;
-        }
-
-        .table-hover tbody tr:hover td a {
-            background: #007bff;
-            color: white;
-        }
-
-        .card-header {
-            background-color: #f8f9fa;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/content.js"></script>
 </head>
 <body>
 
@@ -54,28 +18,9 @@
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navTog" aria-controls="navTog"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navTog">
-        <ul class="navbar-nav mx-auto mt-2 mt-lg-0 nav-fill w-100">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Data</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="downloads.html">Downloads</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="development.html">Development</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<script>
+    navbar('about');
+</script>
 
 <div class="container" style="margin-top: 20px">
     <div id="accordion">
@@ -97,51 +42,18 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Version</th>
                                 <th scope="col">License</th>
-                                <th scope="col">Pypi</th>
+                                <th scope="col">Webpage</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>forex_python</td>
-                                <td>1.5</td>
-                                <td>MIT License</td>
-                                <td><a href="https://pypi.org/project/forex-python/">https://pypi.org/project/forex-python/</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>pycountry</td>
-                                <td>19.8</td>
-                                <td>GNU Lesser General Public License v2</td>
-                                <td>
-                                    <a href="https://pypi.org/project/pycountry/">https://pypi.org/project/pycountry/</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>wbdata</td>
-                                <td>0.2</td>
-                                <td>GNU General Public License v2 or later</td>
-                                <td><a href="https://pypi.org/project/wbdata/">https://pypi.org/project/wbdata/</a></td>
-                            </tr>
-                            <tr>
-                                <td>matplotlib</td>
-                                <td>3.2</td>
-                                <td>Python Software Foundation License</td>
-                                <td>
-                                    <a href="https://pypi.org/project/matplotlib/">https://pypi.org/project/matplotlib/</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>pandas</td>
-                                <td>1.0</td>
-                                <td>BSD 3 License</td>
-                                <td><a href="https://pypi.org/project/pandas/">https://pypi.org/project/pandas/</a></td>
-                            </tr>
-                            <tr>
-                                <td>PyQt5</td>
-                                <td>5.14</td>
-                                <td>GNU General Public License v3</td>
-                                <td><a href="https://pypi.org/project/PyQt5/">https://pypi.org/project/PyQt5/</a></td>
-                            </tr>
+                            <script>
+                                load_about('forex_python', '1.5', 'MIT', 'https://opensource.org/licenses/MIT', 'PyPi', 'https://pypi.org/project/forex-python/');
+                                load_about('pycountry', '19.8', 'GPL v3', 'https://www.gnu.org/licenses/gpl-3.0.en.html', 'PyPi', 'https://pypi.org/project/pycountry/');
+                                load_about('wbdata', '0.2', 'GPL v2 + ', 'https://opensource.org/licenses/gpl-2.0.php', 'PyPi', 'https://pypi.org/project/wbdata/');
+                                load_about('matplotlib', '3.2', 'PSF', 'https://opensource.org/licenses/Python-2.0', 'PyPi', 'https://pypi.org/project/matplotlib/');
+                                load_about('Pandas', '1.0', 'BSD 3', 'https://opensource.org/licenses/BSD-3-Clause', 'PyPi', 'https://pypi.org/project/pandas/');
+                                load_about('PyQt5', '5.14', 'GPL v3', 'https://www.gnu.org/licenses/gpl-3.0.en.html', 'PyPi', 'https://pypi.org/project/PyQt5/');
+                            </script>
                             </tbody>
                         </table>
                     </div>
@@ -167,37 +79,18 @@
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Version</th>
-                                <th scope="col">Homepage</th>
-                                <th scope="col">w3school</th>
+                                <th scope="col">Webpage</th>
+                                <th scope="col">Tutorial</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Html</td>
-                                <td>5.2</td>
-                                <td><a href="https://www.w3.org/html">www.w3.org/html</a></td>
-                                <td><a href="https://www.w3schools.com/html/default.asp">www.w3schools.com/html</a></td>
-                            </tr>
-                            <tr>
-                                <td>CSS</td>
-                                <td>4</td>
-                                <td><a href="https://www.w3.org/Style/CSS/">www.w3.org/Style/CSS/</a></td>
-                                <td><a href="https://www.w3schools.com/css/default.asp">www.w3schools.com/css</a></td>
-                            </tr>
-                            <tr>
-                                <td>Bootstrap</td>
-                                <td>4</td>
-                                <td><a href="https://getbootstrap.com/">getbootstrap.com</a></td>
-                                <td><a href="https://www.w3schools.com/bootstrap4/default.asp">www.w3schools.com/bootstrap4</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>JQuery</td>
-                                <td>3.4</td>
-                                <td><a href="https://jquery.com/">jquery.com</a></td>
-                                <td><a href="https://www.w3schools.com/jquery/default.asp">www.w3schools.com/jquery</a>
-                                </td>
-                            </tr>
+                            <script>
+                                load_about('HTML', '5.2', 'w3.org', 'www.w3.org/html', 'w3school', 'www.w3schools.com/html');
+                                load_about('CSS', '4', 'w3.org', 'www.w3.org/Style/CSS/', 'w3school', 'www.w3schools.com/css');
+                                load_about('JavaScript', '6+', 'ecma-international.org', 'https://www.ecma-international.org/publications/standards/Ecma-262.htm', 'w3school', 'https://www.w3schools.com/Js/default.asp');
+                                load_about('Bootstrap', '4', 'getbootstrap.com', 'getbootstrap.com', 'w3school', 'www.w3schools.com/bootstrap4');
+                                load_about('JQuery', '3.4', 'jquery.com', 'jquery.com', 'w3school', 'www.w3schools.com/jquery');
+                            </script>
                             </tbody>
                         </table>
                     </div>
