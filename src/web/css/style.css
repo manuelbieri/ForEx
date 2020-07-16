@@ -2,9 +2,10 @@
     font-family: "Courier New", serif;
 }
 
-body {
-    overflow-y: scroll;
+::-webkit-scrollbar {
+    width: 0 !important;
 }
+
 
 img {
     display: block;
@@ -19,4 +20,17 @@ img {
 
 .active {
     background: #e9ecef;
+}
+
+@media screen and (max-width: 768px) {
+     .container {
+         width: 100vw;
+         margin: 0;
+         padding: 0;
+     }
+
+    #accordion {
+        width: 100vw;
+        margin: 0;
+    }
 }
