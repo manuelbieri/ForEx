@@ -2,11 +2,6 @@
     font-family: "Courier New", serif;
 }
 
-::-webkit-scrollbar {
-    width: 0 !important;
-}
-
-
 img {
     display: block;
     margin-left: auto;
