@@ -181,11 +181,11 @@ class App(QMainWindow):
 
         for widget in [self.base_currency, self.quote_currency, self.base_currency1, self.quote_currency1]:
             widget.setMinimumWidth(190)
-            widget.setMaximumWidth(280)
+            widget.setMaximumWidth(320)
 
         for widget in [self.country1, self.data1, self.country2, self.data2]:
             widget.setMinimumWidth(200)
-            widget.setMaximumWidth(400)
+            widget.setMaximumWidth(600)
 
         self.gridLayout.addWidget(self.command_line, 3, 0, 1, 4)
         self.gridLayout.addWidget(self.cmd_button, 3, 4, 1, 1)
