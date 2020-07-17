@@ -9,7 +9,8 @@ from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtCore import Qt
 
 try:
-    # Include in try/except block if you're also targeting Mac/Linux
+    # Include in try/except block for Mac/Linux
+    # noinspection PyUnresolvedReferences
     from PyQt5.QtWinExtras import QtWin
     app_id = 'marbl.forex.forex.0.0.3'
     QtWin.setCurrentProcessExplicitAppUserModelID(app_id)
