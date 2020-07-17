@@ -36,13 +36,13 @@
             <div id="collapsePythonModules" class="collapse" aria-labelledby="pythonModules" data-parent="#accordion">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-striped table-hover">
+                        <table class="table table-striped table-hover" id="sort1">
                             <thead>
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Version</th>
-                                <th scope="col">License</th>
-                                <th scope="col">Webpage</th>
+                                <th scope="col" onclick="sortTable(0, 'sort2')">Name</th>
+                                <th scope="col" onclick="sortTable(1, 'sort2')">Version</th>
+                                <th scope="col" onclick="sortTable(2, 'sort2')">License</th>
+                                <th scope="col" onclick="sortTable(3, 'sort2')">Webpage</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -74,13 +74,13 @@
                  data-parent="#accordion">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-striped  table-hover">
+                        <table class="table table-striped  table-hover" id="sort2">
                             <thead>
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Version</th>
-                                <th scope="col">Webpage</th>
-                                <th scope="col">Tutorial</th>
+                                <th scope="col" onclick="sortTable(0, 'sort2')">Name</th>
+                                <th scope="col" onclick="sortTable(1, 'sort2')">Version</th>
+                                <th scope="col" onclick="sortTable(2, 'sort2')">Webpage</th>
+                                <th scope="col" onclick="sortTable(3, 'sort2')">Tutorial</th>
                             </tr>
                             </thead>
                             <tbody>
