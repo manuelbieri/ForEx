@@ -153,7 +153,6 @@ class App(QMainWindow):
         self.plot_button.clicked.connect(self.callback)
 
         self.command_line = QLineEdit()
-        self.command_line.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
 
         self.cmd_button = QPushButton(self)
         self.cmd_button.setText('cmd')
